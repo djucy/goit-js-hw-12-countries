@@ -17,13 +17,16 @@ refs.searchCountryInput.addEventListener('input', debounce(onCountrySearch, 500)
 function onCountrySearch(evt) {
     refs.containerCountry.innerHTML = ""; 
     let searchCountry = '';
-    searchCountry = evt.target.value;
-    
-    API.fetchCountries(searchCountry)
+    searchCountry = evt.target.value.trim();
+    // if (searchCountry === ' ') {    
+    //     return;
+    //  }
+
+   API.fetchCountries(searchCountry)
     .then(renderListCountries)
     .catch((error) => {
   return console.error(error);
-});
+});   
  }
 
 function renderListCountries(country) {
