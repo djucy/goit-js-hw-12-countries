@@ -42,8 +42,6 @@ function renderListCountries(country) {
     }
     else if (country.length === 1) {
         refs.containerCountry.insertAdjacentHTML('beforeend', markupPageCountry);
-        console.log(country);
-        
      }
 };
 
